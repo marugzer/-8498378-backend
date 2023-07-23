@@ -6,14 +6,15 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-test:
+    name: Build and Test
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Python environment
+      - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.x
@@ -26,5 +27,3 @@ jobs:
 
       - name: Check code quality
         run: flake8
-
-      # Optionally, add steps to generate code coverage reports using 'coverage'.
