@@ -1,6 +1,6 @@
 #CandidateId:8498378
 
-Here is the steps by step approach to have a general idea how the api works.
+#Here is the steps by step approach to have a general idea how the api works.
 
 This application is developed Visual Studio Code
 
@@ -11,10 +11,12 @@ Code structure
             - MetricsDto: MericsDto contains metric value in MetricDto format for five metric categories
             - ConvertedDto: This is a converted in a format of country and its metrics
             - ApiResponseDto: This is a presentable DTO to the browser
+    
     MetricsController.py: This is where the processing of conversion and processing and calculation done. 
         - convertToResponseDto: Convert the raw data that is get from the api to the desired ConvertedDto format.
         - calculate_average_monthly_value: Perform monthly calculation foreach metric
         - calculate_daily_national_estimate: Process the daily national estimate for fcs prevalence
+    
     app.py
         Main pyton to run and consume the api.It has the following definitions.
         - fetchDataFromApi: A reusable component to fetch data from the api. If not successfully, generate the apprpriate error message.
