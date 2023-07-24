@@ -8,6 +8,9 @@ from flask import Flask, jsonify, request
 from MetricsController import MetricsController
 from datetime import datetime, timedelta
 
+from flask import Flask
+#from flask_cors import CORS  #8498378 giving me error to allow CORS to be accessed from another port , from the react.
+#using pip installer is needed.
 
 def fetchDataFromApi(api_url):
         try:
@@ -33,6 +36,9 @@ def getYearFromDate(date):
     return date.split("-")[0]
 
 app = Flask(__name__)
+#CORS(app) - #8498378 giving me error to allow CORS to be accessed from another port , from the react.
+#using pip installer is needed.
+
 #output the average monthly value for each value
 @app.route('/api/metric_a/country/<string:country>/<start_date>/<end_date>', methods=['GET'])
 def get_average_monthly_value_metrics_a(country, start_date, end_date):   
